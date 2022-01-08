@@ -22,9 +22,9 @@ func visits(c *gin.Context) {
 	// ctx := context.Background()
 
 	rdb := redis.NewClient(&redis.Options{
-		Addr:     "redis-server:6379",
-		Password: "", // no password set
-		DB:       0,  // use default DB
+		Addr:     "0.0.0.0:6379", // "redis-server:6379"
+		Password: "",             // no password set
+		DB:       0,              // use default DB
 	})
 	pong, err := rdb.Ping().Result()
 	fmt.Println(pong, err)
